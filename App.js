@@ -5,8 +5,16 @@ import {createStackNavigator} from '@react-navigation/stack';
 import { createAppContainer } from 'react-navigation';
 //import { createStackNavigator} from 'react-navigation-stack';
 import OnboardingScreen from './src/screens/OnboardingScreen';
-import HomeScreen from './src/screens/HomeScreen';
+import Index from './src/screens/Index';
 import Splash from './src/screens/Splash';
+import Welcome from './src/screens/Welcome';
+import ChooseTopic from './src/screens/ChooseTopic';
+import Quizz from './src/screens/Quizz';
+import SplashAfterQuizz from './src/screens/SplashAfterQuizz';
+import ResultQuizz from './src/screens/ResultQuizz';
+import SalonListDetails from './src/screens/SalonListDetails';
+import MainContainer from './src/screens/MainContainer';
+import Journal from './src/screens/Journal';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 const Stack = createStackNavigator();
 
@@ -27,7 +35,15 @@ const App = () => {
       <Stack.Navigator screenOptions={{headerShown: false}}>
       <Stack.Screen name="Splash" component={Splash} />
         {/*{isAppFirstLaunched && (*/}<Stack.Screen name="OnboardingScreen" component={OnboardingScreen}/> 
-        <Stack.Screen name="HomeScreen" component={HomeScreen}/>
+        <Stack.Screen name="Index" component={Index}/>
+        <Stack.Screen name="Welcome" component={Welcome}/>
+        <Stack.Screen name="ChooseTopic" component={ChooseTopic}/>
+        <Stack.Screen name="Quizz" component={Quizz}/>
+        <Stack.Screen name="SplashAfterQuizz" component={SplashAfterQuizz}/>
+        <Stack.Screen name="ResultQuizz" component={ResultQuizz}/>
+        <Stack.Screen name="SalonListDetails" component={SalonListDetails}/>
+        <Stack.Screen name="MainContainer" component={MainContainer}/>
+        {/*<Stack.Screen name="Journal" component={Journal}/>*/}
       </Stack.Navigator>
     </NavigationContainer>
     //)

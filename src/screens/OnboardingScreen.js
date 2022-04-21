@@ -39,7 +39,7 @@ const slides = [
 const Slide = ({ item }) => {
   return (
     <View style={{ alignItems: 'center' }}>
-      <Image source={item?.image} style={{ height: '75%', width, resizeMode: ' contain' }} />
+      <Image source={item?.image} style={{ height: '75%', width}} />
       <Text style={styles.title}>{item.title}</Text>
       <Text style={styles.subtitle}>{item.subtitle}</Text>
     </View>
@@ -75,7 +75,7 @@ const OnboardingScreen = ({ navigation }) => {
         <View style={{ marginBottom: 20 }}>
         {
           currentSlideIndex == slides.length - 1 ? <View style = {{height:50}}>
-        <TouchableOpacity style={[styles.btn]} onPress={() => navigation.replace('HomeScreen')}>
+        <TouchableOpacity style={[styles.btn]} onPress={() => navigation.replace('Index')}>
               <Text style={{ fontWeight: 'bold', fontSize: 15 }}>GET STARTED</Text>
             </TouchableOpacity>
         </View> :
