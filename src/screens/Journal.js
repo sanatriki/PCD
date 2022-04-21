@@ -153,7 +153,8 @@ const styles = StyleSheet.create({
         flex: 1,
         display: 'flex',
         padding: 15,
-        backgroundColor: '#FFE4B5'
+        //backgroundColor: '#FFE4B5'
+        backgroundColor: '#ffffff'
         //justifyContent: 'center',
     },
     container1: {

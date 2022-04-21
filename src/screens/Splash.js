@@ -1,18 +1,20 @@
 import React from 'react';
-import { Button, StyleSheet, View, TouchableOpacity, Text } from 'react-native';
+import { Button, StyleSheet, View, TouchableOpacity, Text, Dimensions } from 'react-native';
 import LottieView from 'lottie-react-native';
+
+const { width, height } = Dimensions.get('window');
 
 export default class Splash extends React.Component {
 
 
   componentDidMount() {
     this.animation.play();
-    this.timeoutHandle = setTimeout(()=>{
+    this.timeoutHandle = setTimeout(() => {
       this.props.navigation.replace('OnboardingScreen')
-  },10000)
+    }, 10000)
   }
-      // Or set a specific startFrame and endFrame with:
-    // this.animation.play(30, 120);
+  // Or set a specific startFrame and endFrame with:
+  // this.animation.play(30, 120);
 
 
   resetAnimation = () => {
@@ -30,19 +32,21 @@ export default class Splash extends React.Component {
           style={{
             width: 270,
             height: 270,
-            backgroundColor: '#1a2e35',
+            backgroundColor: '#f8edeb',
           }}
-          source={require('../images/black.json') }
-          // OR find more Lottie files @ https://lottiefiles.com/featured
-          // Just click the one you like, place that file in the 'assets' folder to the left, and replace the above 'require' statement
+          source={require('../images/Lottie.json')}
+        // OR find more Lottie files @ https://lottiefiles.com/featured
+        // Just click the one you like, place that file in the 'assets' folder to the left, and replace the above 'require' statement
         />
-            {/*<View style={styles.buttonContainer}>
+        {/*<View style={styles.buttonContainer}>
           <Button title="TrackMe" onPress={this.resetAnimation} style={styles.button} />
         </View>*/}
-            <TouchableOpacity >
+        <TouchableOpacity >
           <Text onPress={this.resetAnimation} style={styles.title}>TrackMe</Text>
         </TouchableOpacity>
-        <Text style={{fontSize:15,color:'#ffffff', paddingTop: 10, maxWidth: '70%', alignSelf:'center', paddingTop: 5}}>Un journal Thérapeutique guidé pour changer ta vie.</Text>
+        <View style={styles.subHeading}>
+        <Text style={{ fontSize: 15, color: '#1a2e35', paddingTop: 10, maxWidth: '70%', alignSelf: 'center', paddingTop: 5 }}>Un journal Thérapeutique guidé pour changer ta vie.</Text>
+        </View>
       </View>
     );
   }
@@ -50,7 +54,7 @@ export default class Splash extends React.Component {
 
 const styles = StyleSheet.create({
   animationContainer: {
-    backgroundColor: '#1a2e35',
+    backgroundColor: '#f8edeb',
     alignItems: 'center',
     justifyContent: 'center',
     flex: 1,
@@ -58,14 +62,25 @@ const styles = StyleSheet.create({
   buttonContainer: {
     paddingTop: 20,
   },
-  button : {
+  button: {
     color: '#ffffff'
   },
   title: {
-    color: '#ffffff',
+    color: '#1a2e35',
     fontSize: 30,
     paddingBottom: 50,
-    alignSelf:'center',
+    alignSelf: 'center',
+    fontFamily: 'HelveticaNeue',
+  },
+  subHeading: {
+    padding: 10,
+    width: Dimensions.get('screen').width - 50,
+    alignItems: 'center',
+    margin: 10,
+    borderRadius: 20,
+    elevation: 3,
+    backgroundColor: '#ffaaaf',
+    borderTopRightRadius: 0,
   }
 });
 
