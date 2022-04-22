@@ -12,56 +12,58 @@ const Index = () => {
 export default Index;*/
 
 import React from 'react';
-import { View,Text,ImageBackground,Image, StyleSheet} from 'react-native';
+import { View, Text, ImageBackground, Image, StyleSheet, ScrollView} from 'react-native';
 //import styles from './styles';
 import Fles from './Inputs/Fles'
 
-const Index = ({navigation}) => {
-  const joujou=()=>{
+const Index = ({ navigation }) => {
+  const joujou = () => {
     navigation.replace('Welcome')
   };
-    return (
-        <View style={styles.login} >
-       
+  return (
+    <ScrollView>
+      <View style={styles.login} >
+
         <View style={styles.titles} >
-          <Image 
-          source={require('../images/Mylogo1.png')}
-          style={styles.img}>
+          <Image
+            source={require('../images/Mylogo1.png')}
+            style={styles.img}>
           </Image>
 
         </View>
         <Fles sonson={joujou} />
-        
-  
-       </View>
-    );
+
+
+      </View>
+    </ScrollView>
+  );
 };
 
 const styles = StyleSheet.create({
-    
-  titles:{
-   marginTop:'40%',
-   alignItems:'center',
-   width:'100%',
+
+  titles: {
+    marginTop: '40%',
+    alignItems: 'center',
+    width: '100%',
 
 
   },
-  title:{
-     fontSize: 60 ,
-     fontWeight:'bold',
-     color:'#1a2e35',
+  title: {
+    fontSize: 60,
+    fontWeight: 'bold',
+    color: '#1a2e35',
 
   },
-  subtitle:{
-   fontSize:20,
-   color:'#385a64'
+  subtitle: {
+    fontSize: 20,
+    color: '#385a64'
 
-},
-login:{
-  width:'100%',
-  height:'100%',
+  },
+  login: {
+    width: '100%',
+    height: '100%',
 
-},
+  },
 });
 
 export default Index;

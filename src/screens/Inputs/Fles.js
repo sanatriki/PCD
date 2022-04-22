@@ -1,10 +1,10 @@
 import React,{useState,useEffect} from 'react';
-import { View, Pressable, Text,StyleSheet } from 'react-native';
-//import StyleButton from './StyleButton';
-import Translate from './Translate';
-const Fles = ({sonson}) => {
+import { View, Pressable, Text, StyleSheet } from 'react-native';
+import Inputs from './Inputs';
+import InputsJdid from './InputsJdid';
+const Fles = (props) => {
     const[option,setoption]=useState(1); 
-    const ClickChange = ()=>{
+    const ClickChange =()=>{
         setoption(1);
 
     }
@@ -26,13 +26,15 @@ const Fles = ({sonson}) => {
             option===3 ?(
 
 
-                <Translate name={'login'} zizou={sonson}/>
+                <InputsJdid  fct={ClickChange} />
             ):
-            <Translate name={'sign up'} zizou={sonson}/>
+            <Inputs  fct={ClickChange} />
 
             }
         </View>
     );
+
+    
 }
 
 const StyleButton = StyleSheet.create({
@@ -61,3 +63,5 @@ const StyleButton = StyleSheet.create({
     
 
 export default Fles;
+
+
