@@ -1,8 +1,44 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { View,TextInput,Text,StyleSheet,Pressable } from 'react-native';
 
-const Inputs = ({fct}) => {
+
+
+const isValidField = (obj)=>{
+    return Object.values(obj).every(value => value.trim())
+}
+
+
+const updateError =(error,stateUpdate)=>{
+    stateUpdate(error);
+    setTimeout(()=> {
+        stateUpdate('')
+    }, 2500)
+}
+
+const Inputs = ({fct, child}) => {
      
+    const [UserInfo,setUserInfo]=useState({
+        name:'',
+        Email:'',
+        Password:'',
+        ConfirmPassword:'',
+    
+    })
+    
+    const [error,seterror]=useState('')
+    const {name,Email,Password,ConfirmPassword}= UserInfo;
+     const handleOnchangeText=(value,nom)=>{
+         setUserInfo({ ...UserInfo, [nom] : value });
+    
+    };
+
+    const isValid =()=>{
+        if(!isValidField(UserInfo)) return updateError('Required all fields',seterror);
+        if(!name.trim() || name.length < 3) return updateError('Invalid name',seterror);
+        if (!Password.trim() || Password.length < 8) return updateError('Password is less then 8 characters!', seterror);
+        return true;
+    
+    };
   
     return (
         <View style={StyleInput.container} >
@@ -12,18 +48,24 @@ const Inputs = ({fct}) => {
                 
                      placeholder='Name'
                      style={StyleInput.input}
-                     maxLength={40}/>
+                     maxLength={40}
+                     value={name}
+                     onChangeText ={(value)=> handleOnchangeText(value,'name')}
+                     />
                 <Text style={StyleInput.text} >Password</Text>
                     <TextInput
                     placeholder='Password'
                     secureTextEntry={true}
                     style={StyleInput.input}
-                    maxLength={40}/>
+                    maxLength={40}
+                    value={Password}
+                     onChangeText ={(value)=> handleOnchangeText(value,'Password')}
+                    />
               <View style={StyleInput.ct} >
                     
-                     <Pressable style={StyleInput.button} >
-                         
-                           
+                     <Pressable style={StyleInput.button} 
+                      onPress={()=>{if(isValid()){child()}}}>
+                        
                         <Text style={StyleInput.textbutton} >submit</Text>
                      </Pressable>
               </View> 

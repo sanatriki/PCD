@@ -22,7 +22,7 @@ const Welcome = ({navigation}) => {
         {/*Button */}
             <View style={{flex:1, flexDirection:'column', justifyContent:'flex-end', alignItems:'center'}}>
                 <TouchableOpacity style={{justifyContent: 'center', width:'70%', backgroundColor:'#385a64', height:50, marginBottom:90, borderRadius:10}}
-                    onPress={()=>navigation.navigate("ChooseTopic")}>
+                    onPress={()=>navigation.navigate("ChooseTopic2")}>
                     <Text style={{fontSize:15, letterSpacing:1.5,textAlign:'center', position:'relative', fontWeight:'bold', color:'#ededed'}} >Continuer</Text>
                 </TouchableOpacity>
             </View>

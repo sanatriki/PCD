@@ -4,14 +4,14 @@ import { NavigationContainer } from '@react-navigation/native'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import Ionicons from 'react-native-vector-icons/Ionicons'
 import Journal from './Journal'
-import Settings from './Settings'
 import Treatments from './Treatments'
+import Ressources from './Ressources'
 import Profile from './Profile'
 
 //Screen names
 const JournalName = "Acceuil";
+const RessourcesName = "Ressources";
 const TreatmentsName = "Traitements";
-const SettingsName = "Paramétres";
 const ProfileName= "Profile";
 
 const Tab = createBottomTabNavigator();
@@ -33,10 +33,10 @@ const Tab = createBottomTabNavigator();
                     
                     if (rn === JournalName) {
                         iconName = focused ? 'home' : 'home-outline';
-                    } else if (rn ===TreatmentsName) {
+                    } else if (rn ===RessourcesName) {
                         iconName = focused ? 'list' : 'list-outline';
-                    } else if (rn ===SettingsName) {
-                        iconName = focused ? 'settings' : 'settings-outline';
+                    } else if (rn ===TreatmentsName) {
+                        iconName = focused ? 'fitness' : 'fitness-outline';
                     } else if (rn ===ProfileName) {
                         iconName = focused ? 'person' : 'person-outline';
                     }
@@ -54,8 +54,8 @@ const Tab = createBottomTabNavigator();
 
             <Tab.Screen name={JournalName} component={Journal} />
             <Tab.Screen name={TreatmentsName} component={Treatments} />
+            <Tab.Screen name={RessourcesName} component={Ressources} />
             <Tab.Screen name={ProfileName} component={Profile} />
-            <Tab.Screen name={SettingsName} component={Settings} />
 
             </Tab.Navigator>
     )

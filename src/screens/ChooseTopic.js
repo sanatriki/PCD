@@ -1,6 +1,6 @@
 //page après Onboarding
 import { View, Text, StyleSheet, Image, ScrollView, TouchableOpacity, Pressable } from 'react-native'
-import React, {useState} from 'react'
+import React, { useState } from 'react'
 
 const topics = [
     {
@@ -35,74 +35,64 @@ const topics = [
     }
 ]
 
-const pressHandler = (id,image) =>{
+const pressHandler = (id, image) => {
     console.log(id);
-    <Image style={styles.onClickImage} source={image}/>
+    //<Image style={styles.onClickImage} source={image}/>
 
 }
 
-const ChooseTopic = ({navigation}) => {
+const ChooseTopic = ({ navigation }) => {
 
     //const [imagePressed, setImagePressed] = useState(0)
 
     return (
         <ScrollView>
-        <View style={styles.container}>
-            <View style={styles.headingWrapper}>
-                <Text style={styles.heading}>Pourquoi êtes vous sur TrackMe ?</Text>
-                <Text style={styles.subHeading}>Choisi les catégories que tu souhaite améliorer:</Text>
-            </View>
-
-            <ScrollView contentContainerStyle={styles.scrollViewWrapper}>
-                <View style={styles.row}>
-                    <View>
-                        {topics.map((item, index) => {
-                            if (index % 2 == 0) {
-                                return (
-                                    <View style={styles.card}>
-                                    {/*<Pressable onPress={() => {setImagePressed()}} style={({pressed}) => [ {
-                                        borderColor: pressed ? '#385a64' : '#ff4f5a'},
-                                        {opacity: pressed ? 0.5 : 1 }, 
-                                        styles.onClickImage]}>*/}
-                                     <TouchableOpacity onPress={() => pressHandler(item.image)}>
-                                    <Image style={styles.topicImage} source={item.image} />
-                                    <Text style={styles.label}>{item.title}</Text>
-                                     </TouchableOpacity>
-                                     {/*</Pressable>*/}
-                                </View>
-                                )
-                            }
-                        })}
-                    </View>
-                    <View style={{ flex: 1 }}>
-                        {topics.map((item, index) => {
-                            if (index % 2 != 0) {
-                                return (
-                                    <View style={styles.card}>
-                                    {/*<Pressable onPress={() => {setImagePressed()}} style={({pressed}) => [ {
-                                        borderColor: pressed ? '#385a64' : '#ff4f5a'},
-                                        {opacity: pressed ? 0.5 : 1 }, 
-                                        styles.onClickImage]}>*/}
-                                    <TouchableOpacity onPress={() => pressHandler(item.id, item.image)}>
-                                    <Image style={styles.topicImage} source={item.image} />
-                                    <Text style={styles.label}>{item.title}</Text>
-                                     </TouchableOpacity>
-                                     {/*</Pressable>*/}
-                                </View>
-                                )
-                            }
-                        })}
-                    </View>
+            <View style={styles.container}>
+                <View style={styles.headingWrapper}>
+                    <Text style={styles.heading}>Pourquoi êtes vous sur TrackMe ?</Text>
+                    <Text style={styles.subHeading}>Choisi la catégorie que tu souhaite améliorer:</Text>
                 </View>
-            </ScrollView>
 
-            <View style={{ alignItems: 'center' }}>
-                <TouchableOpacity style={{ justifyContent: 'center', width: '70%', backgroundColor: '#385a64', height: 40, marginBottom: 5, marginTop: 10, borderRadius: 10 }}
-                    onPress={()=>navigation.navigate("Quizz")}>
-                    <Text style={{ fontSize: 15, letterSpacing: 1.5, textAlign: 'center', position: 'relative', fontWeight: 'bold', color: '#ededed' }} >C'est parti!</Text>
-                </TouchableOpacity>
+                <ScrollView contentContainerStyle={styles.scrollViewWrapper}>
+                    <View style={styles.row}>
+                        <View>
+                            {topics.map((item, index) => {
+                                if (index % 2 == 0) {
+                                    return (
+                                        <View key={index} style={styles.card}>
+                                            <TouchableOpacity onPress={() => pressHandler(item.image)}>
+                                                <Image style={styles.topicImage} source={item.image} />
+                                                <Text style={styles.label}>{item.title}</Text>
+                                            </TouchableOpacity>
+                                        </View>
+                                    )
+                                }
+                            })}
+                        </View>
+                        <View style={{ flex: 1 }}>
+                            {topics.map((item, index) => {
+                                if (index % 2 != 0) {
+                                    return (
+                                        <View style={styles.card}>
+                                            <TouchableOpacity onPress={() => pressHandler(item.id, item.image)}>
+                                                <Image style={styles.topicImage} source={item.image} />
+                                                <Text style={styles.label}>{item.title}</Text>
+                                            </TouchableOpacity>
+                                        </View>
+                                    )
+                                }
+                            })}
+                        </View>
+                    </View>
+                </ScrollView>
+
+                <View style={{ alignItems: 'center' }}>
+                    <TouchableOpacity style={{ justifyContent: 'center', width: '70%', backgroundColor: '#385a64', height: 40, marginBottom: 5, marginTop: 10, borderRadius: 10 }}
+                        onPress={() => navigation.navigate("Quizz")}>
+                        <Text style={{ fontSize: 15, letterSpacing: 1.5, textAlign: 'center', position: 'relative', fontWeight: 'bold', color: '#ededed' }} >C'est parti!</Text>
+                    </TouchableOpacity>
+                </View>
             </View>
-        </View>
         </ScrollView>
     )
 }
@@ -147,7 +137,7 @@ export const styles = StyleSheet.create({
         color: '#1a2e35',
         flexWrap: 'wrap',
         alignSelf: 'center',
-        paddingTop:5
+        paddingTop: 5
     },
     topicImage: {
         alignSelf: 'center',

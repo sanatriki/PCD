@@ -13,7 +13,7 @@ const updateError =(error,stateUpdate)=>{
     }, 2500)
 }
 
-const InputsJdid = ({fct}) => {
+const InputsJdid = ({fct, child}) => {
     const [UserInfo,setUserInfo]=useState({
         name:'',
         Email:'',
@@ -102,7 +102,7 @@ const InputsJdid = ({fct}) => {
               <View style={StyleInput.ct} >
                     
                      <Pressable 
-                     onPress={()=>press()}
+                     onPress={()=>{if(isValid()){child()}}}
                      style={StyleInput.button} >
                          
                            

@@ -19,27 +19,27 @@ const slides = [
   {
     id: '1',
     image: require('../images/slide1.png'),
-    title: 'Take your breath',
-    subtitle: 'Find the things that take your breath away.',
+    title: 'Soufflez, respirez et prennez de la hauteur.',
+    subtitle: 'Trouvez les choses qui vous coupent le souffle.',
   },
   {
     id: '2',
     image: require('../images/slide2.png'),
-    title: 'Inhale, Exhale',
-    subtitle: 'Inhale peace, Exhale stress, Embrace calm.',
+    title: 'Sortez de votre zone de confort',
+    subtitle: 'Faites preuve d’ouverture d’esprit, changez vos habitudes quotidiennes, faites-vous du bien.',
   },
   {
     id: '3',
-    image: require('../images/slide3.png'),
-    title: 'Pause and Reset',
-    subtitle: 'You are not alone. You have unique ability to go to another world.',
+    image: require('../images/5.png'),
+    title: 'Faites votre choix aujourd’hui.',
+    subtitle: 'Pensez positif, agissez avec optimisme et soyez heureux',
   },
 ];
 
 const Slide = ({ item }) => {
   return (
     <View style={{ alignItems: 'center' }}>
-      <Image source={item?.image} style={{ height: '75%', width}} />
+      <Image source={item?.image} style={{ height: '70%', width}} />
       <Text style={styles.title}>{item.title}</Text>
       <Text style={styles.subtitle}>{item.subtitle}</Text>
     </View>
@@ -54,7 +54,7 @@ const OnboardingScreen = ({ navigation }) => {
     return (
 
       <View style={{
-        height: height * 0.25,
+        height: height * 0.15,
         justifyContent: 'space-between',
         paddingHorizontal: 20,
       }}>
@@ -62,12 +62,12 @@ const OnboardingScreen = ({ navigation }) => {
         <View style={{
           flexDirection: 'row',
           justifyContent: 'center',
-          marginTop: 20,
+          marginTop: 1,
         }}>
           {slides.map((_, index) => (
             <View key={index} style={[styles.indicator, currentSlideIndex == index && {
               backgroundColor: COLORS.white,
-              width: 25
+              width: 30
             }]} />
           ))}
         </View>
@@ -76,16 +76,16 @@ const OnboardingScreen = ({ navigation }) => {
         {
           currentSlideIndex == slides.length - 1 ? <View style = {{height:50}}>
         <TouchableOpacity style={[styles.btn]} onPress={() => navigation.replace('Index')}>
-              <Text style={{ fontWeight: 'bold', fontSize: 15 }}>GET STARTED</Text>
+              <Text style={{ fontWeight: 'bold', fontSize: 15, color:'#ffffff' }}>COMMENCER</Text>
             </TouchableOpacity>
         </View> :
         <View style={{ flexDirection: 'row' }}>
             <TouchableOpacity onPress={skip} style={[styles.btn, { backgroundColor: 'transparent', borderWidth: 1, borderColor: COLORS.white }]}>
-              <Text style={{ fontWeight: 'bold', fontSize: 15, color: COLORS.white }}>SKIP</Text>
+              <Text style={{ fontWeight: 'bold', fontSize: 15, color: COLORS.white }}>PASSER</Text>
             </TouchableOpacity>  
             <View style={{ width: 15 }} />
             <TouchableOpacity style={[styles.btn]} onPress={goNextSlide}>
-              <Text style={{ fontWeight: 'bold', fontSize: 15 }}>NEXT</Text>
+              <Text style={{ fontWeight: 'bold', fontSize: 15, color:'#ffffff' }}>NEXT</Text>
             </TouchableOpacity>
           </View>
         }
@@ -133,10 +133,10 @@ const OnboardingScreen = ({ navigation }) => {
       onMomentumScrollEnd={updateCurrentSlideIndex}
         pagingEnabled
         data={slides}
-        contentContainerStyle={{ height: height * 0.75 }}
+        contentContainerStyle={{ height: height * 0.8 }}
         showsHorizontalScrollIndicator={false}
         horizontal
-        renderItem={({ item }) => <Slide item={item} />}
+        renderItem={({ item }) => <Slide key={item} item={item} />}
       />
       <Footer />
     </SafeAreaView>
@@ -151,12 +151,13 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     marginTop: 20,
     textAlign: 'center',
+    maxWidth: '60%'
   },
   subtitle: {
     color: COLORS.white,
     fontSize: 13,
     marginTop: 10,
-    maxWidth: '70%',
+    maxWidth: '60%',
     textAlign: 'center',
     lineHeight: 23,
   },

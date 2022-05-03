@@ -17,9 +17,11 @@ import { View, Text, ImageBackground, Image, StyleSheet, ScrollView} from 'react
 import Fles from './Inputs/Fles'
 
 const Index = ({ navigation }) => {
+
   const joujou = () => {
     navigation.replace('Welcome')
   };
+  
   return (
     <ScrollView>
       <View style={styles.login} >
@@ -29,6 +31,7 @@ const Index = ({ navigation }) => {
             source={require('../images/Mylogo1.png')}
             style={styles.img}>
           </Image>
+          <Text>TrackMe</Text>
 
         </View>
         <Fles sonson={joujou} />

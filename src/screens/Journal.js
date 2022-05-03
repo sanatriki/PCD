@@ -17,15 +17,15 @@ const Journal = ({ navigation }) => {
     const [rating, setRating] = useState(3)
     const getRatingEmoji = () => {
         if (rating === 2) {
-            return <Image source={require('../images/normal.png')} style={{ width: 50, height: 50 }} />
+            return <Image source={require('../images/extrêmeSévére.png')} style={{ width: 50, height: 50 }} />
         } else if (rating === 3) {
-            return <Image source={require('../images/légère.png')} style={{ width: 50, height: 50 }} />
+            return <Image source={require('../images/sévére.png')} style={{ width: 50, height: 50 }} />
         } else if (rating === 4) {
             return <Image source={require('../images/modéré.png')} style={{ width: 50, height: 50 }} />
         } else if (rating === 5) {
-            return <Image source={require('../images/sévére.png')} style={{ width: 50, height: 50 }} />
+            return <Image source={require('../images/légère.png')} style={{ width: 50, height: 50 }} />
         } else if (rating === 6) {
-            return <Image source={require('../images/extrêmeSévére.png')} style={{ width: 50, height: 50 }} />
+            return <Image source={require('../images/normal.png')} style={{ width: 50, height: 50 }} />
         }
     }
 

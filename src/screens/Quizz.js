@@ -1,17 +1,19 @@
 import React from 'react';
 import { View,Text,StyleSheet,Pressable} from 'react-native';
 import Choix from './Inputs/Choix';
+
 function Ques({navigation}) {
     const fct=()=>{
   navigation.navigate('SplashAfterQuizz')
     }
+    
     return (
 
         <View style={styles.all} >
           
             <View style={styles.top} >
                 <Text 
-                 style={styles.text} >I couldn’t seem to experience any positive feeling at all </Text>
+                 style={styles.text} >Avez-vous eu des troubles mentales auparavant? </Text>
 
             </View>
             <View style={styles.menu}>

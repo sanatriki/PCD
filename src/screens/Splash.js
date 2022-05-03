@@ -7,12 +7,15 @@ const { width, height } = Dimensions.get('window');
 export default class Splash extends React.Component {
 
 
+  
+
   componentDidMount() {
     this.animation.play();
     this.timeoutHandle = setTimeout(() => {
-      this.props.navigation.replace('OnboardingScreen')
-    }, 10000)
+      this.props.navigation.replace('MainContainer') //'OnboardingScreen'
+    }, 3000)
   }
+
   // Or set a specific startFrame and endFrame with:
   // this.animation.play(30, 120);
 
@@ -45,7 +48,7 @@ export default class Splash extends React.Component {
           <Text onPress={this.resetAnimation} style={styles.title}>TrackMe</Text>
         </TouchableOpacity>
         <View style={styles.subHeading}>
-        <Text style={{ fontSize: 15, color: '#1a2e35', paddingTop: 10, maxWidth: '70%', alignSelf: 'center', paddingTop: 5 }}>Un journal Thérapeutique guidé pour changer ta vie.</Text>
+          <Text style={{ fontSize: 15, color: '#1a2e35', paddingTop: 10, maxWidth: '70%', alignSelf: 'center', paddingTop: 5 }}>Un journal Thérapeutique guidé pour changer ta vie.</Text>
         </View>
       </View>
     );

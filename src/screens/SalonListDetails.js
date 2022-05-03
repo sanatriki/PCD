@@ -77,10 +77,10 @@ const SalonListDetails = ({ navigation, route }) => {
                                     <TbibIcon /*style={styles.Icon}*/ style={{ paddingLeft: 50 }} name="user-md" size={30} color={"#385a64"} />
                                     <HandIcon /*style={styles.Icon}*/ style={{ paddingLeft: 50 }} name="hand-holding-medical" size={30} color={"#ff4f5a"} />
                                 </Animatable.View>
-                                <Animatable.View animation='fadeInUp'>
-                                <Image style={styles.emojie} source={detail.image}/>
-                                <Text style={styles.title}>{detail.title}</Text>
-                                <Text style={styles.miniTitle}>{detail.miniTitle}</Text>
+                                <Animatable.View animation='fadeInUp'  key={detail} >
+                                <Image style={styles.emojie}   source={detail.image}/>
+                                <Text style={styles.title}   >{detail.title}</Text>
+                                <Text style={styles.miniTitle}  >{detail.miniTitle}</Text>
                                 </Animatable.View>
                             </View>
                         )
