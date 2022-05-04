@@ -65,7 +65,7 @@ const TraitementStresse = ({ navigation }) => {
                     <View >
                         {etapes.map((item, index) => {
                             return (
-                                <View>
+                                <View key={item.id}>
                                     <Animatable.View animation='fadeInUp' key={index} >
                                         <View style={styles.Heading}>
                                             <Text style={{ fontSize: 18, fontWeight: '500' }} >{item.title}</Text>

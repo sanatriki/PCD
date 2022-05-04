@@ -12,7 +12,7 @@ export default class Splash extends React.Component {
   componentDidMount() {
     this.animation.play();
     this.timeoutHandle = setTimeout(() => {
-      this.props.navigation.replace('MainContainer') //'OnboardingScreen'
+      this.props.navigation.replace('OnboardingScreen') //'OnboardingScreen'
     }, 3000)
   }
 

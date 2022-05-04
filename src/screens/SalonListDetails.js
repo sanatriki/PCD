@@ -68,16 +68,16 @@ const SalonListDetails = ({ navigation, route }) => {
                 <Text style={styles.name}>{item.name}</Text>
                 <Image source={item.image} style={styles.image} />
                 {/* EMOJI SELON SON RESULTAT PSYCHOLOGIQUE*/}
-                <View style={styles.bg}>
+                <View style={styles.bg} >
                     {Emojies.map((detail, index) => {
                         return (
-                            <View>
+                            <View key={detail.id}>
                                 <Animatable.View style={{ flexDirection: 'row'}} animation='bounceIn' delay={0.0001} >
                                     <InfoIcon /*style={styles.Icon}*/ style={{ paddingLeft: 110 }} name="light-bulb" size={30} color={"#ffaaaf"} />
                                     <TbibIcon /*style={styles.Icon}*/ style={{ paddingLeft: 50 }} name="user-md" size={30} color={"#385a64"} />
                                     <HandIcon /*style={styles.Icon}*/ style={{ paddingLeft: 50 }} name="hand-holding-medical" size={30} color={"#ff4f5a"} />
                                 </Animatable.View>
-                                <Animatable.View animation='fadeInUp'  key={detail} >
+                                <Animatable.View animation='fadeInUp'  >
                                 <Image style={styles.emojie}   source={detail.image}/>
                                 <Text style={styles.title}   >{detail.title}</Text>
                                 <Text style={styles.miniTitle}  >{detail.miniTitle}</Text>

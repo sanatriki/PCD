@@ -75,7 +75,7 @@ const RessourcesVideos = ({ navigation }) => {
                             <Text style={{marginTop:30, marginLeft:10, fontSize:17, fontWeight:'400'}}> Vidéos proposée par la chaîne DeveloppementPerso sur YouTube qui calme le stresse, l'anxieté et la dépression:	</Text>
                             {Videos.map((detail, index) => {
                                 return (
-                                    <View >
+                                    <View key={detail.id}>
                                         <Animatable.View animation='fadeInUp' key={detail} >
                                             <View style={{ flexDirection: 'row' }}>
                                                 <Image style={styles.emojie} source={detail.image} />

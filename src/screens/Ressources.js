@@ -55,9 +55,17 @@ const Ressources = ({ navigation }) => {
         const color = item.id === selectedId ? 'white' : 'black';
 
         const onpress = () => {
-            setSelectedId(item.id);
-            // ICI ON VA CHOISIR navigate.RessourcesLivres, navigate.RessourcesMusiques, navigate.RessourcesActivités ou navigate.RessourcesVidéos
+            setSelectedId(item.id); 
+
+            if (item.id===1){
+            navigation.navigate('RessourcesLivres')
+        } else if (item.id===2){
+            navigation.navigate('RessourcesMusic')
+        } else if (item.id===3){
             navigation.navigate('RessourcesActivities')
+        } else if (item.id===4){
+            navigation.navigate('RessourcesVideos')
+        } 
           };
 
         return (

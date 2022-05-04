@@ -135,7 +135,7 @@ const RessourcesLivres = ({ navigation }) => {
                             </Animatable.View>
                             {livres.map((detail, index) => {
                                 return (
-                                    <View >
+                                    <View key={detail.id} >
                                         <Animatable.View animation='fadeInUp' key={detail} >
                                             <View style={{ flexDirection: 'row' }}>
                                                 <Image style={styles.emojie} source={detail.image} />

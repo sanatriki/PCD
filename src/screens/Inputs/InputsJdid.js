@@ -169,7 +169,7 @@ const StyleInput = StyleSheet.create({
      
       button:{
           
-        backgroundColor:'#1a2e35',
+        backgroundColor:'#385a64',
         borderRadius:10,
         height:40,
         justifyContent:'center',

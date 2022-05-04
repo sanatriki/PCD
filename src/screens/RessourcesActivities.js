@@ -73,7 +73,7 @@ const RessourcesActivities = ({ navigation }) => {
                             </Animatable.View>
                             {Activities.map((detail, index) => {
                                 return (
-                                    <View >
+                                    <View key={detail.id}>
                                         <Animatable.View animation='fadeInUp' key={detail} >
                                             <View>
                                                 {/*<Image style={styles.emojie} source={detail.image} />*/}

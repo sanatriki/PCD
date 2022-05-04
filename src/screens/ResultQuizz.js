@@ -67,7 +67,7 @@ const ResultQuizz = ({ navigation }) => {
                                 navigation.navigate('SalonListDetails', { item });
                             }}
                                 style={{ marginBottom: theme.spacing(2), height: ITEM_HEIGHT }}>
-                                <View style={{ flex: 1, padding: theme.spacing(2) }}>
+                                <View style={{ flex: 1, padding: theme.spacing(2) }} key={item.id}>
                                     <View style={[StyleSheet.absoluteFillObject, { backgroundColor: colors[item.id % colors.length - 1], borderRadius: 16 }]} />
                                     <Text style={styles.name}>{item.title}</Text>
                                     <Text style={styles.subtitle}>{item.subtitle}</Text>

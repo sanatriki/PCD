@@ -60,7 +60,6 @@ const StyleButton = StyleSheet.create({
         color:'#ededed',
         fontSize: 12,
         fontWeight: '500',
-        textTransform: 'uppercase',
     },
     });
     

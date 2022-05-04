@@ -70,7 +70,7 @@ const RessourcesMusic = ({ navigation }) => {
                             <Text style={{marginTop:30, marginLeft:10, fontSize:17, fontWeight:'400'}}> playlist proposée par Monoman sur YouTube qui calme le stresse, l'anxieté et la dépression:	</Text>
                             {Musiques.map((detail, index) => {
                                 return (
-                                    <View >
+                                    <View key={detail.id}>
                                         <Animatable.View animation='fadeInUp' key={detail} >
                                             <View style={{ flexDirection: 'row' }}>
                                                 <Image style={styles.emojie} source={detail.image} />
