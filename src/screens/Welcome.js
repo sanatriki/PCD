@@ -16,14 +16,15 @@ const Welcome = ({navigation}) => {
     <View style={{flex:2}}>
         {/*Text */}
             <View style={{flex:1, flexDirection:'column', justifyContent:'flex-start',alignItems:'center', backgroundColor:'#ededed'}}>
-                 <Text style={{color:'#385a64', fontSize:30, fontWeight:'bold'}}>C'est un bon début !</Text>
-                 <Text style={{maxWidth: '70%', color:'#1a2e35', fontSize:16, textAlign:'center', paddingTop:20}}> Nous allons maintenant te poser quelques questions afin de t'offrir un bilan de bien-être mental personnalisé. </Text>
+                 <Text style={{color:'#385a64', fontSize:30, fontWeight:'bold', fontFamily: 'HelveticaNeue'}}>C'est un bon début !</Text>
+                 <Text style={{maxWidth: '80%', color:'#1a2e35', fontSize:16, textAlign:'center', paddingTop:20, fontFamily: 'HelveticaNeue'}}> Nous allons maintenant te poser quelques questions afin de t'offrir un bilan de bien-être mental personnalisé. </Text>
+                 <Text style={{maxWidth: '80%', color:'#1a2e35', fontSize:16, textAlign:'center', paddingTop:10, fontFamily: 'HelveticaNeue'}}> Veuillez lire chaque énoncé et choisir une réponse qui indique dans quelle mesure l'énoncé s'applique à vous au cours de la semaine écoulée. </Text>
             </View>
         {/*Button */}
             <View style={{flex:1, flexDirection:'column', justifyContent:'flex-end', alignItems:'center'}}>
-                <TouchableOpacity style={{justifyContent: 'center', width:'70%', backgroundColor:'#385a64', height:50, marginBottom:90, borderRadius:10}}
+                <TouchableOpacity style={{justifyContent: 'center', width:'70%', backgroundColor:'#385a64', height:50, marginBottom:30, borderRadius:10}}
                     onPress={()=>navigation.navigate("ChooseTopic2")}>
-                    <Text style={{fontSize:15, letterSpacing:1.5,textAlign:'center', position:'relative', fontWeight:'bold', color:'#ededed'}} >Continuer</Text>
+                    <Text style={{fontSize:16, letterSpacing:1.5,textAlign:'center', position:'relative', fontWeight:'bold', color:'#ededed', fontFamily: 'HelveticaNeue'}} >Continuer</Text>
                 </TouchableOpacity>
             </View>
     </View>

@@ -10,7 +10,7 @@ const topics = [
     },
     {
         id: 2,
-        title: 'Augemnter la productivité',
+        title: 'Augmenter sa productivité',
         image: require('../images/productivité.png'),
     },
     {
@@ -20,12 +20,12 @@ const topics = [
     },
     {
         id: 4,
-        title: 'Reduire l`anxieté',
+        title: 'Reduire l’anxieté',
         image: require('../images/anxiete1.png'),
     },
     {
         id: 5,
-        title: 'Dormir mieux',
+        title: 'Mieux dormir',
         image: require('../images/dépression1.png'),
     },
     {
@@ -73,7 +73,7 @@ const ChooseTopic2 = ({ navigation }) => {
             <ScrollView horizontal={false}>
                 <View style={styles.container}>
                     <View style={styles.headingWrapper}>
-                        <Text style={styles.heading}>Pourquoi êtes vous sur TrackMe ?</Text>
+                        <Text style={styles.heading}>Pourquoi êtes vous sur HealMe ?</Text>
                         <Text style={styles.subHeading}>Choisissez la catégorie que vous souhaitez améliorer:</Text>
                     </View>
                     <FlatList
@@ -91,7 +91,7 @@ const ChooseTopic2 = ({ navigation }) => {
                 <View style={{ alignItems: 'center' }}>
                     <TouchableOpacity style={{ justifyContent: 'center', width: '50%', backgroundColor: '#385a64', height: 40, marginBottom: 25, marginTop: 30, borderRadius: 10 }}
                         onPress={() => navigation.navigate("Quizz")}>
-                        <Text style={{ fontSize: 15, letterSpacing: 1.5, textAlign: 'center', position: 'relative', fontWeight: 'bold', color: '#ededed' }} >C'est parti!</Text>
+                        <Text style={{fontFamily: 'HelveticaNeue', fontSize: 16, letterSpacing: 1.5, textAlign: 'center', position: 'relative', fontWeight: 'bold', color: '#ededed' }} >C'est parti!</Text>
                     </TouchableOpacity>
                 </View>
 
@@ -137,6 +137,8 @@ const styles = StyleSheet.create({
     },
     title: {
         fontSize: 18,
+        fontFamily: 'HelveticaNeue',
+        fontWeight:'bold'
     },
 });
 

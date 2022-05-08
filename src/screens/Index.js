@@ -31,7 +31,7 @@ const Index = ({ navigation }) => {
             source={require('../images/Mylogo1.png')}
             style={styles.img}>
           </Image>
-          <Text>TrackMe</Text>
+          <Text style={{color: '#1a2e35',fontSize: 25, marginTop:25, alignSelf: 'center', fontFamily: 'HelveticaNeue',fontWeight: 'bold'}}>HealMe!</Text>
 
         </View>
         <Fles sonson={joujou} />
@@ -50,6 +50,10 @@ const styles = StyleSheet.create({
     width: '100%',
 
 
+  },
+  img:{
+    width: 100,
+    height: 100
   },
   title: {
     fontSize: 60,

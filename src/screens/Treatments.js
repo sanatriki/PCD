@@ -73,7 +73,7 @@ const Treatments =({navigation}) =>{
             <TouchableOpacity >
                     <Image source={require('../images/DoctorTraitement1.png')} style={{ width: 300, height: 300, alignSelf: 'center', borderRadius: 5 }} />
                     <Text style={styles.title}>Bienvenu dans la page de traitements</Text>
-                    <Text style={styles.miniTitle}>Vous allez trouver ici les étapes à suivre pour jouir d'un résultat épanouissant pour améliorer votre état mentale.</Text>
+                    <Text style={styles.miniTitle}>Vous allez trouver ici les étapes à suivre pour jouir d'un résultat épanouissant et pour améliorer votre état mentale.</Text>
                 </TouchableOpacity>
 
                 <SafeAreaView style={{ flex: 3 }} >

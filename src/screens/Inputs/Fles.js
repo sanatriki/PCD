@@ -58,8 +58,9 @@ const StyleButton = StyleSheet.create({
     },
     text:{
         color:'#ededed',
-        fontSize: 12,
-        fontWeight: '500',
+        fontSize: 15,
+        fontFamily: 'HelveticaNeue',
+        fontWeight: 'bold'
     },
     });
     

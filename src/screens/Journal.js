@@ -38,12 +38,12 @@ const Journal = ({ navigation }) => {
                         navigation.goBack();
                     }} />
                     <Image style={styles.logo} source={require('../images/Mylogo1.png')} />
-                    <Text style={styles.title}>TrackMe</Text>
+                    <Text style={styles.title}>HealMe!</Text>
                 </Animatable.View>
 
                 {/*BIENVENU */}
                 <View style={styles.welcome}>
-                    <Text style={styles.heading}>Bienvenu dans ton Journal</Text>
+                    <Text style={styles.heading}>Bienvenu dans ton Journal,</Text>
                     <Text style={styles.userHeading}>User!</Text>
                     <Text style={styles.subHeading}>Nous sommes impatients de commencer ce parcours avec toi!</Text>
                 </View>
@@ -122,19 +122,19 @@ const Journal = ({ navigation }) => {
 
                 {/* RECOMMANDATION */}
                 <View style={styles.recommandImgWrapper}>
-                    <Text style={styles.recommandTitle}>Recommandations pour vous</Text>
+                    <Text style={styles.recommandTitle}>Recommandations pour votre quotidien</Text>
                     <ScrollView horizontal>
                             <View style={[styles.recommandImgWrapper]}>
-                                <Image source={require('../images/stresse1.png')} style={styles.ImgRecommand} />
-                                <Text style={styles.titleBook}>No to stress</Text>
+                                <Image source={require('../ressourcesImg/3-kifs-par-jour.jpg')} style={styles.ImgRecommand} />
+                                <Text style={styles.titleBook}>3 Kifs par jour</Text>
                             </View>
                             <View style={[styles.recommandImgWrapper]}>
-                                <Image source={require('../images/anxiete1.png')} style={styles.ImgRecommand}/>
-                                <Text style={styles.titleBook}>No to anxity</Text>
+                                <Image source={require('../ressourcesImg/petit-chahier.jpg')} style={styles.ImgRecommand}/>
+                                <Text style={styles.titleBook}>Rester zen</Text>
                             </View>
                             <View style={[styles.recommandImgWrapper]}>
-                                <Image source={require('../images/dépression1.png')} style={styles.ImgRecommand} />
-                                <Text style={styles.titleBook}>No to depression</Text>
+                                <Image source={require('../ressourcesImg/mediter.jpg')} style={styles.ImgRecommand} />
+                                <Text style={styles.titleBook}>Méditer</Text>
                             </View>
                     </ScrollView>
                 </View>
@@ -180,9 +180,10 @@ const styles = StyleSheet.create({
     },
     title: {
         alignSelf: 'center',
-        marginTop: 10,
-        fontSize: 17,
-        fontWeight: '500',
+        marginTop: 15,
+        fontSize: 18,
+        fontWeight: 'bold',
+        fontFamily: 'HelveticaNeue',
     },
     heading: {
         fontFamily: 'HelveticaNeue',
@@ -226,6 +227,7 @@ const styles = StyleSheet.create({
         alignSelf: 'flex-end',
         textTransform: 'uppercase',
         fontWeight: 'bold',
+        fontFamily: 'HelveticaNeue',
 
     },
     quote: {
@@ -256,6 +258,7 @@ const styles = StyleSheet.create({
         textTransform: 'uppercase',
         fontWeight: 'bold',
         paddingLeft: 15,
+        fontFamily: 'HelveticaNeue',
 
     },
     //Recommmandation
@@ -266,7 +269,8 @@ const styles = StyleSheet.create({
         textTransform: 'uppercase',
         fontWeight: 'bold',
         marginTop: 20,
-        marginBottom: 20
+        marginBottom: 20,
+        fontFamily: 'HelveticaNeue',
 
     },
     /*recommandCard: {
@@ -277,17 +281,18 @@ const styles = StyleSheet.create({
         //width: Dimensions.get('window').width /3
     },*/
     ImgRecommand: {
-    width:150,
-     height:150,
+    width:130,
+     height:130,
       marginRight: 20, 
       backgroundColor: '#1a2e35', 
       borderRadius:10
     },
     titleBook : {
         fontFamily: 'HelveticaNeue',
-        fontSize: 18,
+        fontSize: 16,
         fontWeight: '500',
-        alignSelf:'center'
+        alignSelf:'center',
+        maxWidth:'80%'
     }
 })
 export default Journal;

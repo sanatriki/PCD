@@ -45,7 +45,7 @@ const Inputs = ({ fct, child }) => {
                 {error}
             </Text> : null}
 
-            <Text style={StyleInput.text} >Name</Text>
+            <Text style={StyleInput.text} >Pseudo</Text>
             <TextInput
 
                 placeholder='Name'
@@ -54,7 +54,7 @@ const Inputs = ({ fct, child }) => {
                 value={name}
                 onChangeText={(value) => handleOnchangeText(value, 'name')}
             />
-            <Text style={StyleInput.text} >Password</Text>
+            <Text style={StyleInput.text} >Mot de Passe</Text>
             <TextInput
                 placeholder='Password'
                 secureTextEntry={true}
@@ -68,7 +68,7 @@ const Inputs = ({ fct, child }) => {
                 <Pressable style={StyleInput.button}
                     onPress={() => { if (isValid()) { child() } }}>
 
-                    <Text style={StyleInput.textbutton} >submit</Text>
+                    <Text style={StyleInput.textbutton} >Connexion</Text>
                 </Pressable>
             </View>
             <View style={StyleInput.ct} >
@@ -78,7 +78,7 @@ const Inputs = ({ fct, child }) => {
                     style={StyleInput.button} >
 
 
-                    <Text style={StyleInput.textbutton} >Back</Text>
+                    <Text style={StyleInput.textbutton} >Retour</Text>
                 </Pressable>
             </View>
 
@@ -109,8 +109,10 @@ const StyleInput = StyleSheet.create({
 
         alignItems: 'center',
         justifyContent: 'center',
-        fontSize: 15,
+        fontSize: 16,
         color: "#1a2e35",
+        fontWeight:'400',
+        fontFamily: 'HelveticaNeue'
 
 
     },
@@ -135,8 +137,9 @@ const StyleInput = StyleSheet.create({
 
     textbutton: {
         color: '#fff',
-        fontSize: 12,
-        fontWeight: '500',
+        fontSize: 15,
+        fontWeight: 'bold',
+        fontFamily: 'HelveticaNeue'
     },
 
 });

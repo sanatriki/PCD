@@ -62,6 +62,8 @@ const StyleInput = StyleSheet.create({
          justifyContent:'center',
          fontSize: 15 ,
          color:"#1a2e35",
+         fontFamily: 'HelveticaNeue',
+         fontWeight: 'bold'
          
          
       },
@@ -85,8 +87,8 @@ const StyleInput = StyleSheet.create({
     textbutton:{
         color:'#fff',
         fontSize: 12,
-        fontWeight: '500',
-        textTransform: 'uppercase',
+        fontWeight: 'bold',
+        fontFamily: 'HelveticaNeue'
     },
 
 });

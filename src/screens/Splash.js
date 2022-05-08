@@ -13,7 +13,7 @@ export default class Splash extends React.Component {
     this.animation.play();
     this.timeoutHandle = setTimeout(() => {
       this.props.navigation.replace('OnboardingScreen') //'OnboardingScreen'
-    }, 3000)
+    }, 5000)
   }
 
   // Or set a specific startFrame and endFrame with:
@@ -45,10 +45,10 @@ export default class Splash extends React.Component {
           <Button title="TrackMe" onPress={this.resetAnimation} style={styles.button} />
         </View>*/}
         <TouchableOpacity >
-          <Text onPress={this.resetAnimation} style={styles.title}>TrackMe</Text>
+          <Text onPress={this.resetAnimation} style={styles.title}>HealMe!</Text>
         </TouchableOpacity>
         <View style={styles.subHeading}>
-          <Text style={{ fontSize: 15, color: '#1a2e35', paddingTop: 10, maxWidth: '70%', alignSelf: 'center', paddingTop: 5 }}>Un journal Thérapeutique guidé pour changer ta vie.</Text>
+          <Text style={{ fontSize: 16, color: '#1a2e35', paddingTop: 10, maxWidth: '70%', alignSelf: 'center', paddingTop: 5, fontFamily: 'HelveticaNeue' }}>Un journal Thérapeutique guidé pour changer ta vie.</Text>
         </View>
       </View>
     );
@@ -74,6 +74,7 @@ const styles = StyleSheet.create({
     paddingBottom: 50,
     alignSelf: 'center',
     fontFamily: 'HelveticaNeue',
+    fontWeight: 'bold'
   },
   subHeading: {
     padding: 10,

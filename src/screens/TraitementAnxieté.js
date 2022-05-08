@@ -132,7 +132,7 @@ export const styles = StyleSheet.create({
         alignItems: 'center',
         margin: 15,
         borderRadius: 10,
-        backgroundColor: '#ffffee',
+        backgroundColor: '#e3dcd2',
     },
     description: {
         maxWidth: '93%',

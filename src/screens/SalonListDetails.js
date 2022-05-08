@@ -6,6 +6,14 @@ import InfoIcon from 'react-native-vector-icons/Entypo';
 import TbibIcon from 'react-native-vector-icons/FontAwesome';
 import HandIcon from 'react-native-vector-icons/FontAwesome5';
 import * as Animatable from 'react-native-animatable';
+import niceColors from 'nice-color-palettes'
+
+
+const colors = [
+    ...niceColors[1].slice(1, niceColors[1].length),
+    ...niceColors[55].slice(0, 3),
+];
+
 
 const DURATION = 400;
 
@@ -59,24 +67,25 @@ export const Emojies = [
 const SalonListDetails = ({ navigation, route }) => {
     const { item } = route.params
     return (
-        <ScrollView>
             <View style={{ flex: 1 }}>
-                <View style={[StyleSheet.absoluteFillObject, { backgroundColor: item.color, borderRadius: 0, height: TOP_HEADER_HEIGHT + 32 }]} />
+                <View style={[StyleSheet.absoluteFillObject, { backgroundColor: colors[item.id % colors.length - 1], borderRadius: 0, height: TOP_HEADER_HEIGHT + 32 }]} />
                 <BackIcon style={styles.Icon} name="arrow-left" size={30} color={"#1a2e35"} onPress={() => {
                     navigation.goBack();
                 }} />
-                <Text style={styles.name}>{item.name}</Text>
+                <Text style={styles.name}>{item.title}</Text>
                 <Image source={item.image} style={styles.image} />
                 {/* EMOJI SELON SON RESULTAT PSYCHOLOGIQUE*/}
                 <View style={styles.bg} >
-                    {Emojies.map((detail, index) => {
-                        return (
-                            <View key={detail.id}>
-                                <Animatable.View style={{ flexDirection: 'row'}} animation='bounceIn' delay={0.0001} >
+                <ScrollView>
+                <Animatable.View style={{ flexDirection: 'row'}} animation='bounceIn' delay={0.0001} >
                                     <InfoIcon /*style={styles.Icon}*/ style={{ paddingLeft: 110 }} name="light-bulb" size={30} color={"#ffaaaf"} />
                                     <TbibIcon /*style={styles.Icon}*/ style={{ paddingLeft: 50 }} name="user-md" size={30} color={"#385a64"} />
                                     <HandIcon /*style={styles.Icon}*/ style={{ paddingLeft: 50 }} name="hand-holding-medical" size={30} color={"#ff4f5a"} />
                                 </Animatable.View>
+                    {Emojies.map((detail, index) => {
+                        return (
+                            <View key={detail.id}>
+
                                 <Animatable.View animation='fadeInUp'  >
                                 <Image style={styles.emojie}   source={detail.image}/>
                                 <Text style={styles.title}   >{detail.title}</Text>
@@ -85,9 +94,9 @@ const SalonListDetails = ({ navigation, route }) => {
                             </View>
                         )
                     })}
+                    </ScrollView>
                 </View>
             </View>
-        </ScrollView>
     )
 }
 const styles = StyleSheet.create({
@@ -96,7 +105,7 @@ const styles = StyleSheet.create({
         fontSize: 20,
         position: 'absolute',
         top: TOP_HEADER_HEIGHT - theme.spacing(2) * 5,
-        left: theme.spacing(2) * 4
+        left: theme.spacing(2) * 4,
     },
     image: {
         width: ITEM_HEIGHT * 0.8,

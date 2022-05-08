@@ -19,7 +19,7 @@ const slides = [
   {
     id: '1',
     image: require('../images/slide1.png'),
-    title: 'Soufflez, respirez et prennez de la hauteur.',
+    title: 'Soufflez, respirez et prenez de la hauteur.',
     subtitle: 'Trouvez les choses qui vous coupent le souffle.',
   },
   {
@@ -76,16 +76,16 @@ const OnboardingScreen = ({ navigation }) => {
         {
           currentSlideIndex == slides.length - 1 ? <View style = {{height:50}}>
         <TouchableOpacity style={[styles.btn]} onPress={() => navigation.replace('Index')}>
-              <Text style={{ fontWeight: 'bold', fontSize: 15, color:'#ffffff' }}>COMMENCER</Text>
+              <Text style={{ fontWeight: 'bold', fontSize: 15, color:'#ffffff',fontFamily: 'HelveticaNeue' }}>COMMENCER</Text>
             </TouchableOpacity>
         </View> :
         <View style={{ flexDirection: 'row' }}>
             <TouchableOpacity onPress={skip} style={[styles.btn, { backgroundColor: 'transparent', borderWidth: 1, borderColor: COLORS.white }]}>
-              <Text style={{ fontWeight: 'bold', fontSize: 15, color: COLORS.white }}>PASSER</Text>
+              <Text style={{ fontWeight: 'bold', fontSize: 15, color: COLORS.white,fontFamily: 'HelveticaNeue' }}>PASSER</Text>
             </TouchableOpacity>  
             <View style={{ width: 15 }} />
             <TouchableOpacity style={[styles.btn]} onPress={goNextSlide}>
-              <Text style={{ fontWeight: 'bold', fontSize: 15, color:'#ffffff' }}>NEXT</Text>
+              <Text style={{ fontWeight: 'bold', fontSize: 15, color:'#ffffff',fontFamily: 'HelveticaNeue' }}>NEXT</Text>
             </TouchableOpacity>
           </View>
         }

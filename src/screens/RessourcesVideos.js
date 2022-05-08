@@ -59,14 +59,13 @@ const RessourcesVideos = ({ navigation }) => {
 
     return (
         <SafeAreaView>
-            <ScrollView  >
                 <View >
                     <View style={[{ backgroundColor: '#fde2e4', borderRadius: 15, height: TOP_HEADER_HEIGHT + 700 }]}>
                         <BackIcon style={styles.Icon} name="arrow-left" size={30} color={"#1a2e35"} onPress={() => {
                             navigation.goBack();
                         }} />
                         <Text style={styles.name}>Vidéos recommandés</Text>
-                        <View style={styles.bg}>
+                        <ScrollView style={styles.bg}>
                             <Animatable.View style={{ flexDirection: 'row' }} animation='bounceIn' >
                             <InfoIcon  style={{ paddingLeft: 110 }} name="info" size={30} color={"#ffaaaf"} />
                                             <FilmIcon  style={{ paddingLeft: 50 }} name="film" size={32} color={"#385a64"} />
@@ -76,7 +75,7 @@ const RessourcesVideos = ({ navigation }) => {
                             {Videos.map((detail, index) => {
                                 return (
                                     <View key={detail.id}>
-                                        <Animatable.View animation='fadeInUp' key={detail} >
+                                        <Animatable.View animation='fadeInUp' key={index} >
                                             <View style={{ flexDirection: 'row' }}>
                                                 <Image style={styles.emojie} source={detail.image} />
                                                     <Text style={styles.title} >{detail.title}</Text>
@@ -85,10 +84,9 @@ const RessourcesVideos = ({ navigation }) => {
                                     </View>
                                 )
                             })}
-                        </View>
+                        </ScrollView>
                     </View>
                 </View>
-            </ScrollView>
         </SafeAreaView>
     )
 }

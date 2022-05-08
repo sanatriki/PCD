@@ -60,7 +60,7 @@ const InputsJdid = ({fct, child}) => {
                 {error}
                 </Text>:null}
             
-                <Text style={StyleInput.text} >Name</Text>
+                <Text style={StyleInput.text} >Pseudo</Text>
                      <TextInput
                 
                      placeholder='Name'
@@ -81,7 +81,7 @@ const InputsJdid = ({fct, child}) => {
 
 
                     />
-                <Text style={StyleInput.text} >Password</Text>
+                <Text style={StyleInput.text} >Mot de passe</Text>
                      <TextInput
                      secureTextEntry={true}
                      placeholder='Name'
@@ -90,7 +90,7 @@ const InputsJdid = ({fct, child}) => {
                      value={Password}
                      onChangeText ={(value)=> handleOnchangeText(value,'Password')}
                      />
-                <Text style={StyleInput.text} >Confirm Password</Text>
+                <Text style={StyleInput.text} >Confirmer mot de passe</Text>
                      <TextInput
                       secureTextEntry={true}
                      placeholder='Name'
@@ -106,7 +106,7 @@ const InputsJdid = ({fct, child}) => {
                      style={StyleInput.button} >
                          
                            
-                        <Text style={StyleInput.textbutton} >submit</Text>
+                        <Text style={StyleInput.textbutton} >Valider</Text>
                      </Pressable>
               </View> 
               <View style={StyleInput.ct} >
@@ -116,7 +116,7 @@ const InputsJdid = ({fct, child}) => {
                     style={StyleInput.button} >
                         
                           
-                       <Text style={StyleInput.textbutton} >Back</Text>
+                       <Text style={StyleInput.textbutton} >Retour</Text>
                     </Pressable>
              </View> 
             
@@ -148,10 +148,12 @@ const StyleInput = StyleSheet.create({
 
       text: {
 
-        textAlign:'center',
-         fontSize: 15 ,
-         color:"#1a2e35",
-         
+        alignItems: 'center',
+        justifyContent: 'center',
+        fontSize: 16,
+        color: "#1a2e35",
+        fontWeight:'400',
+        fontFamily: 'HelveticaNeue'
        
          
          
@@ -178,10 +180,10 @@ const StyleInput = StyleSheet.create({
     },
 
     textbutton:{
-        color:'#fff',
-        fontSize: 12,
-        fontWeight: '500',
-        textTransform: 'uppercase',
+        color: '#fff',
+        fontSize: 15,
+        fontWeight: 'bold',
+        fontFamily: 'HelveticaNeue'
     },
     error:{
         justifyContent:'center',
@@ -189,6 +191,7 @@ const StyleInput = StyleSheet.create({
         fontSize: 20 ,
          color:"#1a2e35",
          padding:10,
+         fontFamily: 'HelveticaNeue'
         
 
     },
